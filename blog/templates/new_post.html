@@ -1,0 +1,49 @@
+{% extends "base_new_post.html" %}
+
+{% block content %}
+    <h1 id="">Write a post</h1>
+    <form action="{{ url_for('new_post') }}" method="post" accept-charset="utf-8">
+        {{ form.csrf_token }}
+        <p>
+            <!--
+            {{ form.title.label }}
+            {{ form.title|safe }}
+            -->
+
+            <input name="title" type="text" placeholder="Title?" />
+
+            <!--
+            {% if form.title.errors %}
+            <ul class="errors">
+                {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            -->
+        </p>
+        <p>
+            <!--
+            {{ form.content.label }}
+            {{ form.content(rows=25,cols=100)|safe }}
+            -->
+
+        <textarea name="content" data-provide="markdown" rows="10"></textarea>
+        <label class="checkbox">
+        <input name="publish" type="checkbox"> Publish
+        </label>
+        <hr/>
+        <button type="submit" class="btn">Submit</button>
+
+            
+            <!--
+            {% if form.content.errors %}
+            <ul class="errors">
+                {% for error in form.content.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            -->
+    </form>
+{% endblock %}

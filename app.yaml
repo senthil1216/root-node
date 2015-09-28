@@ -1,0 +1,24 @@
+application: root-node
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /google9711d7d50153eb65\.html
+  static_files: google9711d7d50153eb65.html
+  upload: google9711d7d50153eb65\.html
+
+- url: .*
+  script: main.app
+ 
+- url: /static
+  static_dir : static
+  
+libraries:
+- name: markupsafe
+  version: "latest"
