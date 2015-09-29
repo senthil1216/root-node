@@ -1,4 +1,8 @@
-*.py[cod]
+*.pyc
+# don't include third-party dependencies.
+lib/
+!lib/README.md
+.DS_Store
 
 # C extensions
 *.so
